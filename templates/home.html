@@ -1,10 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1>Home</h1>
-<p>This is the home page</p>
-<p>Here is some data:</p>
-    {% for element in data %}
-    <p> {{ element.element }} : {{ element.word }} </p>
-    {% endfor %}
-<p>===END OF DATA===</p>
+{% for element in data %}
+<div class="media content-section">
+    <div class="media-body">
+        <div class="tile-metadata">
+            <a class="mr-2" href="#">{{ element.username }}</a>
+            <small class="text-muted">{{ element.date_added }}</small>
+        </div>
+        <span class="tile-title-header">Hero: <a class="tile-title text-decoration-none" href="#">{{ element.hero }}</a></span>
+        <p class="tile-content">{{ element.info }}</p>
+    </div>
+</div>
+{% endfor %}
 {% endblock content %}
